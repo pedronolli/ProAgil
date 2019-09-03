@@ -1,5 +1,8 @@
+import { DateTimeFormatPipe } from './_helps/DateTimeFormat.pipe';
+import { EventoService } from './_services/evento.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { TooltipModule, BsDropdownModule, ModalModule } from 'ngx-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,15 +16,19 @@ import { FormsModule } from '@angular/forms';
    declarations: [
       AppComponent,
       EventosComponent,
-      NavComponent
+      NavComponent,
+      DateTimeFormatPipe
    ],
    imports: [
       BrowserModule,
+      BsDropdownModule.forRoot(),
+      TooltipModule.forRoot(),
+      ModalModule.forRoot(),
       AppRoutingModule,
       HttpClientModule,
       FormsModule
    ],
-   providers: [],
+   providers: [EventoService],
    bootstrap: [
       AppComponent
    ]
